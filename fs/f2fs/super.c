@@ -205,9 +205,9 @@ static int f2fs_statfs(struct dentry *dentry, struct kstatfs *buf)
 	return 0;
 }
 
-static int f2fs_show_options(struct seq_file *seq, struct dentry *root)
+static int f2fs_show_options(struct seq_file *seq, struct vfsmount *vfs)
 {
-	struct f2fs_sb_info *sbi = F2FS_SB(root->d_sb);
+	struct f2fs_sb_info *sbi = F2FS_SB(vfs->mnt_sb);
 
 	if (test_opt(sbi, BG_GC))
 		seq_puts(seq, ",background_gc_on");
