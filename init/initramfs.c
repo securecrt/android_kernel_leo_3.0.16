@@ -598,6 +598,11 @@ static int __init populate_rootfs(void)
 			free_initrd();
 		}
 #else
+		/* workaround for magldr1.13 boot from sd 
+		   pad 6MB zero before the initrd.gz.
+					 -- SecureCRT 20130524 */
+		if(initrd_start == 0xC0A00000)
+                	initrd_start += 0x600000;
 		printk(KERN_INFO "Unpacking initramfs...\n");
 		err = unpack_to_rootfs((char *)initrd_start,
 			initrd_end - initrd_start);
