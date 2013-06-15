@@ -153,9 +153,12 @@ static struct mmc_platform_data htcleo_sdslot_data =
 	.status			= htcleo_sdslot_status,
 	.register_status_notify	= NULL,
 	.translate_vdd		= htcleo_sdslot_switchvdd,
-	.msmsdcc_fmin	= 144000,
+	.msmsdcc_fmin	= 400000,
 	.msmsdcc_fmid	= 25000000,
-	.msmsdcc_fmax	= 49152000,
+	.msmsdcc_fmax	= 50000000,
+	.xpc_cap        = 0,
+    .nonremovable   = 0,
+	.uhs_caps	    = (MMC_CAP_UHS_SDR12 | MMC_CAP_UHS_SDR25 | MMC_CAP_UHS_SDR50),
 };
 
 static uint32_t wifi_on_gpio_table[] =
