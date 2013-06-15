@@ -157,7 +157,7 @@ static struct mmc_platform_data htcleo_sdslot_data =
 	.msmsdcc_fmid	= 25000000,
 	.msmsdcc_fmax	= 50000000,
 	.xpc_cap        = 0,
-    .nonremovable   = 0,
+	.nonremovable   = 0,
 	.uhs_caps	    = (MMC_CAP_UHS_SDR12 | MMC_CAP_UHS_SDR25 | MMC_CAP_UHS_SDR50),
 };
 
